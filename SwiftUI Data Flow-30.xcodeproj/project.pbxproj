@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9444B91F2C05023200CB5EB7 /* DiscountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9444B91E2C05023200CB5EB7 /* DiscountButton.swift */; };
+		9444B9212C05030C00CB5EB7 /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9444B9202C05030C00CB5EB7 /* PaymentButton.swift */; };
+		9444B9232C05041C00CB5EB7 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9444B9222C05041C00CB5EB7 /* CartView.swift */; };
 		94CF9FD92C03870A00BDB7CA /* SwiftUI_Data_Flow_30App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF9FD82C03870A00BDB7CA /* SwiftUI_Data_Flow_30App.swift */; };
 		94CF9FDB2C03870A00BDB7CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF9FDA2C03870A00BDB7CA /* ContentView.swift */; };
 		94CF9FDD2C03870D00BDB7CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94CF9FDC2C03870D00BDB7CA /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9444B91E2C05023200CB5EB7 /* DiscountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountButton.swift; sourceTree = "<group>"; };
+		9444B9202C05030C00CB5EB7 /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
+		9444B9222C05041C00CB5EB7 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		94CF9FD52C03870A00BDB7CA /* SwiftUI Data Flow-30.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Data Flow-30.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CF9FD82C03870A00BDB7CA /* SwiftUI_Data_Flow_30App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Data_Flow_30App.swift; sourceTree = "<group>"; };
 		94CF9FDA2C03870A00BDB7CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9444B9242C05179100CB5EB7 /* ContentModel */ = {
+			isa = PBXGroup;
+			children = (
+				94CF9FE62C038CA300BDB7CA /* Product.swift */,
+			);
+			path = ContentModel;
+			sourceTree = "<group>";
+		};
 		94ADFD192C03FB7100BE241B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,13 +81,12 @@
 		94CF9FD72C03870A00BDB7CA /* SwiftUI Data Flow-30 */ = {
 			isa = PBXGroup;
 			children = (
-				94ADFD192C03FB7100BE241B /* ViewModel */,
-				94CF9FED2C038F4500BDB7CA /* ReusableViews */,
 				94CF9FEA2C038E7300BDB7CA /* App */,
+				94CF9FED2C038F4500BDB7CA /* ReusableViews */,
+				9444B9242C05179100CB5EB7 /* ContentModel */,
 				94CF9FE92C038E6500BDB7CA /* Scene */,
 				94CF9FE82C038E5500BDB7CA /* Resources */,
 				94CF9FDE2C03870D00BDB7CA /* Preview Content */,
-				94CF9FF02C03A91300BDB7CA /* CartBadgeButton.swift */,
 			);
 			path = "SwiftUI Data Flow-30";
 			sourceTree = "<group>";
@@ -98,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				94CF9FDA2C03870A00BDB7CA /* ContentView.swift */,
-				94CF9FE62C038CA300BDB7CA /* Product.swift */,
+				94ADFD192C03FB7100BE241B /* ViewModel */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -115,6 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				94CF9FEE2C038F5E00BDB7CA /* ProductCard.swift */,
+				94CF9FF02C03A91300BDB7CA /* CartBadgeButton.swift */,
+				9444B91E2C05023200CB5EB7 /* DiscountButton.swift */,
+				9444B9202C05030C00CB5EB7 /* PaymentButton.swift */,
+				9444B9222C05041C00CB5EB7 /* CartView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -189,12 +206,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9444B9232C05041C00CB5EB7 /* CartView.swift in Sources */,
+				9444B9212C05030C00CB5EB7 /* PaymentButton.swift in Sources */,
 				94CF9FF12C03A91300BDB7CA /* CartBadgeButton.swift in Sources */,
 				94CF9FDB2C03870A00BDB7CA /* ContentView.swift in Sources */,
 				94CF9FD92C03870A00BDB7CA /* SwiftUI_Data_Flow_30App.swift in Sources */,
 				94CF9FE72C038CA300BDB7CA /* Product.swift in Sources */,
 				94CF9FF32C03B94C00BDB7CA /* CartManager.swift in Sources */,
 				94CF9FEF2C038F5E00BDB7CA /* ProductCard.swift in Sources */,
+				9444B91F2C05023200CB5EB7 /* DiscountButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

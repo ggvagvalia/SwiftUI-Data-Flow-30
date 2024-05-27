@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CartBadgeButton: View {
     var productPickedCount: Int
+    
     var body: some View {
         ZStack {
-//            Image("Ellipse")
             Image(systemName: "cart")
-                .font(.system(size: 35))
+                .font(.system(size: 30))
             ZStack {
                 Circle()
                     .fill(Color.black)
@@ -22,10 +22,10 @@ struct CartBadgeButton: View {
                     .font(.caption)
                     .foregroundColor(.white)
                     .font(.system(size: 15))
-            }        
+            }
             .offset(x: 16, y: 13)
-            
-        }    }
+        }
+    }
 }
 
 //#Preview {

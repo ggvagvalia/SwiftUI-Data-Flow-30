@@ -22,64 +22,65 @@ struct ProductCard: View {
                         .scaledToFit()
                         .shadow(radius: 5)
                         .blur(radius: product.inStock == 0 ? 5 : 0)
-                    
-                    Text((product.inStock == 0) ? "out of stock" : "" )
-                        .position(x: 170 / 2, y: 200 / 2)
-                        .font(.system(size: 28))
-                        .bold()
-                        .foregroundColor(.black)
-                    VStack() {
+                    GeometryReader { geometry in
+                        Text((product.inStock == 0) ? "მარაგი ამოწურულია" : "" )
+                            .font(.system(size: 20))
+                            .bold()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.black)
+                    }
+                    VStack(alignment: .leading) {
                         HStack {
                             Button(action: {
                                 print("Trashhhh")
                                 cartManager.deleteFromCart(product: product)
                             }) {
-                                Image(systemName: "arrow.up.trash")
-                                    .font(.system(size: 23))
-                                    .tint(Color.red)
-                                    .bold()
+                                Image(systemName: "trash.circle")
+                                    .font(.system(size: 35))
+                                    .tint(Color.black)
                             }
                             .contentShape(Circle())
                             .padding(10)
                             Spacer()
                         }
-                        
                         Spacer()
                         HStack {
                             Text(product.name)
-                                .font(.system(size: 19))
+                                .font(.system(size: 18))
                             Spacer()
-                            Button(action: {
-                                print("----")
-                                cartManager.removeItemFromCart(product: product)
-                            }) {
-                                Image(systemName: "minus.circle")
-                                    .font(.system(size: 23))
-                                    .tint(Color.black)
-
+                            HStack(spacing: 2) {
+                                Button(action: {
+                                    print("-")
+                                    cartManager.removeItemFromCart(product: product)
+                                }) {
+                                    Image(systemName: "minus.circle")
+                                        .font(.system(size: 23))
+                                        .tint(Color.black)
+                                        .clipShape(Circle())
+                                }
+                                .contentShape(Circle())
+                                Button(action: {
+                                    print("+")
+                                    product.inStock != 0 ? cartManager.addItemToCart(product: product) : print ("soryy")
+                                    product.inStock != 0 ? print("\(product.inStock)") : ()
+                                }) {
+                                    Image(systemName: "plus.circle")
+                                        .font(.system(size: 23))
+                                        .tint(Color.black)
+                                        .clipShape(Circle())
+                                }
+                                .contentShape(Circle())
                             }
-                            .contentShape(Circle())
-                            Button(action: {
-                                print("++++")
-                                product.inStock != 0 ? cartManager.addItemToCart(product: product) : print ("soryy")
-                                product.inStock != 0 ? print("\(product.inStock)") : ()
-                            }) {
-                                Image(systemName: "plus.circle")
-                                    .font(.system(size: 23))
-                                    .tint(Color.black)
-                            }
-                            .contentShape(Circle())
-                            
                         }
                         .bold()
-                        .padding(8)
+                        .padding(.leading, 4)
+                        .padding(.trailing, 4)
+                        .padding(.top, 8)
+                        .padding(.bottom, 8)
                         .background(.ultraThinMaterial)
                         .cornerRadius(20)
-                        
-                        
                     }
-                    
-                    
                 }
                 VStack {
                     HStack() {
@@ -90,21 +91,16 @@ struct ProductCard: View {
                     }
                     .font(.system(size: 17))
                     .padding(.leading, 2.5)
-                    
-                    HStack {
-                        
-                        
-                    }
                 }
                 .padding(.leading, 2.5)
                 .padding(.trailing, 2.5)
             }
-            .frame(width: 170, height: 230)
+            .frame(width: 175, height: 230)
         }
     }
 }
 
-#Preview {
-    ProductCard(product: productList[0])
-        .environmentObject(CartManager())
-}
+//#Preview {
+//    ProductCard(product: productList[0])
+//        .environmentObject(CartManager())
+//}

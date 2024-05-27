@@ -8,7 +8,6 @@
 import Foundation
 
 class CartManager: ObservableObject {
-    
     @Published private(set) var products: [Product] = []
     @Published private(set) var totalPrice: Double = 0
     var formattedTotalPrice: String {
@@ -16,20 +15,19 @@ class CartManager: ObservableObject {
     }
     private var discountApplied: Bool = false
     
-    
     func addItemToCart(product: Product) {
-        
         guard product.inStock > 0 else { return }
         totalPrice += product.price
         products.append(product)
-        product.inStock -= 1
         
+        product.inStock -= 1
     }
     
     func removeItemFromCart(product: Product) {
         if let index = products.firstIndex(where: { $0.id == product.id }) {
             totalPrice -= product.price
             products.remove(at: index)
+            
             product.inStock += 1
         }
     }
@@ -41,10 +39,6 @@ class CartManager: ObservableObject {
         
         productList.first { $0.id == product.id }?.inStock += Int(sameItemCount)
     }
-    func cartItemsCount(product: Product) -> Int {
-        products.filter {$0.id == product.id}.count
-    }
-    
     
     func makeDiscount(discountPercentage: Double) {
         for index in 0..<products.count {
@@ -64,17 +58,6 @@ class CartManager: ObservableObject {
         } else {
             totalPrice = totalOriginalPrice
         }
-        
         discountApplied.toggle()
-        //        
-        //        for product in productList {
-        //                if discountApplied {
-        //                    product.price = product.originalPrice
-        //                } else {
-        //                    let discountedPrice = product.originalPrice * (1 - discountPercentage / 100)
-        //                    product.price = discountedPrice
-        //                }
-        //            }
-        //        discountApplied.toggle()
     }
 }
