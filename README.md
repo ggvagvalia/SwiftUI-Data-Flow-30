@@ -1,4 +1,4 @@
-# Online Grocery Store App
+# Online Grocery Store App 
 
 This project is a SwiftUI-based single-page application that allows users to browse and manage their grocery shopping in an intuitive way. The app displays a list of grocery items, allows users to adjust quantities, and provides a checkout view with real-time updates.
 
